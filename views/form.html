@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar Comentário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body class="w-screen h-screen flex flex-col bg-slate-300">
+    <!-- header -->
+    <header class="p-5 flex gap-4 flex-col bg-slate-600">
+      <h1 class="text-4xl font-bold text-center text-white">
+        Sistema de Comentários
+      </h1>
+      <nav>
+        <ul class="flex justify-center space-x-4">
+          <li>
+            <a
+              class="text-white font-bold p-2 border-2 rounded-2xl border-slate-400 hover:text-slate-400"
+              href="/"
+              >Listar Comentário</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex flex-1 justify-center items-center">
+      <form
+        class="w-full max-w-xl bg-white p-6 rounded-lg shadow-lg flex flex-col gap-4"
+        action="/comentarios"
+        method="post"
+      >
+        <h2 class="text-2xl font-bold text-center text-slate-700">
+          Novo Comentário
+        </h2>
+
+        <div class="flex flex-col">
+          <label class="font-semibold text-slate-600 mb-1" for="title"
+            >Título do comentário:</label
+          >
+          <input
+            class="border border-slate-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-slate-500"
+            type="text"
+            id="title"
+            name="title"
+            required
+            placeholder="Digite o título"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="font-semibold text-slate-600 mb-1" for="description"
+            >Comentário:</label
+          >
+          <textarea
+            class="border border-slate-300 p-2 rounded resize-y min-h-[100px] focus:outline-none focus:ring-2 focus:ring-slate-500"
+            id="description"
+            name="description"
+            required
+            placeholder="Digite seu comentário"
+          ></textarea>
+        </div>
+
+        <button
+          class="bg-slate-600 hover:bg-slate-700 text-white font-semibold py-2 rounded transition-colors"
+          type="submit"
+        >
+          Salvar Comentário
+        </button>
+      </form>
+    </main>
+
+    <footer class="mt-auto">
+      <p class="p-4 w-screen bg-slate-600 text-center text-white text-sm">
+        &copy; 2025 Sistema de Comentários
+      </p>
+    </footer>
+
+    <script src="/js/form.js"></script>
+  </body>
+</html>
